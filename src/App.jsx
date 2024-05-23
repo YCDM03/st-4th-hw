@@ -1,4 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Detail from "./pages/Detail";
+import Home from "./pages/Home";
 import "./App.css";
+
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/detail/:id" element={<Detail />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
 function App() {
   /**
@@ -14,7 +28,11 @@ function App() {
     |-- App.jsx
    */
 
-  return <></>;
+  return (
+    <>
+      <Router></Router>
+    </>
+  );
 }
 
 export default App;
